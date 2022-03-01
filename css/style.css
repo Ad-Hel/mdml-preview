@@ -53,3 +53,11 @@ body.dys{
     margin: 0 auto;
     display: block;
 }
+
+#logo-big{
+    position: absolute;
+    transform: translateY(-100px);
+    z-index: 2000;
+    height: 100px;
+    width: auto;
+}
