@@ -1,6 +1,13 @@
 body{
     counter-reset: page;
 }
+@font-face {
+    font-family: Atkinson;
+    src: url(../assets/font/Atkinson-Hyperlegible-Regular-102.ttf);
+}
+body.dys{
+    font-family: Atkinson, Arial, sans-serif !important;
+}
 .page{
     position: relative;
     padding: 10rem 5rem;
