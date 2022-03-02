@@ -10755,6 +10755,10 @@ textarea.form-control-lg {
   aspect-ratio: 16/9;
 }
 
+img {
+  filter: brightness(0.8) saturate(1.25);
+}
+
 .page {
   position: relative;
   padding: 10rem 5vw;
