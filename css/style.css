@@ -8,51 +8,6 @@ body{
 body.dys{
     font-family: Atkinson, Arial, sans-serif !important;
 }
-.page{
-    position: relative;
-    padding: 10rem 5rem;
-    min-height: 75vh;
-    margin: 5rem 0;
-}
-
-.page::before{
-    content: "";
-    position: absolute;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background-image: url('../assets/images/entetepage.svg');
-    display: block;
-    width: 12rem;
-    height: 3rem;
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 75%;
-}
-
-.page::after{
-    content: counter(page);
-    counter-increment: page;
-    position: absolute;
-    width: 2rem;
-    transform: translateX(-50%);
-    left: 50%;
-    bottom: 2rem;
-}
-
-.page-decoration{
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    width: 50%;
-}
-
-.page-illustration{
-    width: 50%;
-    margin: 0 auto;
-    display: block;
-}
 
 #logo-big{
     position: absolute;

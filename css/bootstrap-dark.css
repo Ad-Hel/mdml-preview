@@ -10750,5 +10750,86 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.video-fluid {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.page {
+  position: relative;
+  padding: 10rem 5vw;
+  min-height: 75vh;
+  margin: 5rem 0;
+}
+.page::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url("../assets/images/entetepage.svg");
+  display: block;
+  width: 12rem;
+  height: 3rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 75%;
+}
+.page::after {
+  content: counter(page);
+  counter-increment: page;
+  position: absolute;
+  width: 2rem;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 2rem;
+}
+.page-decoration {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 50%;
+}
+.page-illustration {
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+.page-picture {
+  position: relative;
+}
+.page-picture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000011;
+  height: 3rem;
+  width: 3rem;
+  transform: rotate(45deg) translateX(-75%);
+  opacity: 97%;
+}
+.page-picture::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #000011;
+  height: 3rem;
+  width: 3rem;
+  transform: rotate(45deg) translateX(75%);
+  opacity: 97%;
+}
+.page-picture-full img {
+  min-height: 50vh;
+  width: auto;
+  object-fit: cover;
+}
+.page-video iframe {
+  width: calc(100% + 10vw);
+  margin: 0 -5vw;
+  aspect-ratio: 16/9;
+}
 
 /*# sourceMappingURL=bootstrap-dark.css.map */
