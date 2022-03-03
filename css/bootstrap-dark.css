@@ -10773,7 +10773,7 @@ img {
   min-height: 15vh;
 }
 .svg-fill {
-  animation: fadeIn 8000ms 2000ms ease-in-out both;
+  animation: fadeIn 1000ms 4000ms ease-in-out both;
 }
 
 @keyframes fadeIn {
