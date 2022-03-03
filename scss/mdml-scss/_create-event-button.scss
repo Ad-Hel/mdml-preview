@@ -3,16 +3,17 @@
     bottom: 5rem;
     right: 12vw;
     font-size: 2rem;
-    background-color: $white;
-    height: 3rem;
-    width: 3rem;
-    line-height: 3rem;
-    border-radius: 50%;
+    
     &-link{
         padding: 0;
         position: relative;
         display: block;
         text-align: center;
+        background-color: $white;
+        height: 3rem;
+        width: 3rem;
+        line-height: 3rem;
+        border-radius: 50%;    
     }
     &-text{
         font-size: 1rem;
@@ -22,6 +23,9 @@
             left: -50%;
             top: -50%;
             animation: rotate 10s linear infinite;
+            border-radius: 50%;
+            background-color: $light;
+            z-index: -1;
         }
     }
 }
