@@ -10759,6 +10759,31 @@ img {
   filter: brightness(0.8) saturate(1.25);
 }
 
+.svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+.svg-container {
+  position: relative;
+  width: 100%;
+  max-height: 50vh;
+  min-height: 15vh;
+}
+.svg-fill {
+  animation: fadeIn 8000ms 2000ms ease-in-out both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 .page {
   position: relative;
   padding: 10rem 5vw;
