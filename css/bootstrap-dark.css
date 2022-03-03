@@ -10759,6 +10759,45 @@ img {
   filter: brightness(0.8) saturate(1.25);
 }
 
+.create-event-button {
+  position: fixed;
+  bottom: 5rem;
+  right: 12vw;
+  font-size: 2rem;
+}
+.create-event-button-link {
+  padding: 0;
+  position: relative;
+  display: block;
+  text-align: center;
+  background-color: #000011;
+  height: 3rem;
+  width: 3rem;
+  line-height: 3rem;
+  border-radius: 50%;
+}
+.create-event-button-text {
+  font-size: 1rem;
+  color: #F5F5FF;
+}
+.create-event-button-text-box {
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  animation: rotate 10s linear infinite;
+  border-radius: 50%;
+  background-color: #000022;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .svg {
   position: absolute;
   left: 50%;
