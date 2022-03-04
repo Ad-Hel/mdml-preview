@@ -3,6 +3,7 @@
     padding: 10rem 5vw;
     min-height: 75vh;
     margin: 5rem 0;
+    overflow: hidden;
     &::before{
         content: "";
         position: absolute;
