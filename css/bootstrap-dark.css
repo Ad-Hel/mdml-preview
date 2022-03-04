@@ -10889,10 +10889,12 @@ textarea.form-control-lg {
 @media (min-width: 992px) {
   .offcanvas-lg.offcanvas-end {
     transform: none;
-    position: initial;
   }
   .offcanvas-lg .offcanvas-header {
     display: none;
+  }
+  .offcanvas-lg .offcanvas-body {
+    overflow-y: visible;
   }
 }
 .page {

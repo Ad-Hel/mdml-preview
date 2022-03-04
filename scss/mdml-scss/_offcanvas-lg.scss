@@ -35,10 +35,12 @@
     .offcanvas-lg{
         &.offcanvas-end{
             transform: none;
-            position: initial;
         }
         & .offcanvas-header{
             display: none;
+        }
+        & .offcanvas-body{
+            overflow-y: visible;
         }
     }
 }
