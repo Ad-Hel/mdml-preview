@@ -1,0 +1,45 @@
+@media (max-width: map.get($grid-breakpoints, "lg")){
+    .offcanvas-lg {
+        position: fixed;
+        bottom: 0;
+        z-index: $zindex-offcanvas;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        color: $offcanvas-color;
+        visibility: hidden;
+        background-color: $offcanvas-bg-color;
+        background-clip: padding-box;
+        outline: 0;
+        @include box-shadow($offcanvas-box-shadow);
+        @include transition(transform $offcanvas-transition-duration ease-in-out);
+        & .offcanvas-body {
+            flex-grow: 1;
+            padding: $offcanvas-padding-y $offcanvas-padding-x;
+            overflow-y: auto;
+          }
+        &.offcanvas-end {
+            top: 0;
+            right: 0;
+            width: $offcanvas-horizontal-width;
+            border-left: $offcanvas-border-width solid $offcanvas-border-color;
+            transform: translateX(100%);
+          }
+        &.show {
+            transform: none;
+            visibility: visible;
+        }
+      }
+}
+@media (min-width: map.get($grid-breakpoints, 'lg')){
+    .offcanvas-lg{
+        &.offcanvas-end{
+            transform: none;
+            position: initial;
+        }
+        & .offcanvas-header{
+            display: none;
+        }
+    }
+}
+

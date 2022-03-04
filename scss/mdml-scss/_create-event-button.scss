@@ -17,7 +17,7 @@
     }
     &-text{
         font-size: 1rem;
-        color: $primary;
+        color: $dark;
         &-box{
             position: absolute;
             left: -50%;
@@ -26,6 +26,26 @@
             border-radius: 50%;
             background-color: $light;
             z-index: -1;
+            width: 100px;
+            height: 100px;
+        }
+    }
+    @media (max-width: map.get($grid-breakpoints, 'lg')) {
+        bottom: 4rem;
+        right: 50%;
+        transform: translateX(50%);
+        &-link{
+            height: 2rem;
+            width: 2rem;
+            line-height: 2rem;
+        }
+        &-text{
+            &-box{
+                width: 75px;
+                height: 75px;
+                top: -67%;
+                left: -67%;
+            }
         }
     }
 }

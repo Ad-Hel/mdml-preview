@@ -9,10 +9,14 @@ body.dys{
     font-family: Atkinson, Arial, sans-serif !important;
 }
 
-#logo-big{
+.mdml-logo{
+    width: min(100px, 20vw);
     position: absolute;
-    transform: translateY(-100px);
-    z-index: 2000;
-    height: 100px;
-    width: auto;
+    top: 1rem;
+    left: 1rem;
+}
+
+html:not([data-scroll='0']) .mdml-logo{
+    width: 50px;
+    position: inherit;
 }
