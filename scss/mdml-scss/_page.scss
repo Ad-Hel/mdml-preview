@@ -51,6 +51,7 @@
             width: 3rem;
             transform: rotate(45deg) translateX(-75%);
             opacity: 97%;
+            z-index: 1000;
         }
         &::after{
             content: "";
@@ -62,6 +63,7 @@
             width: 3rem;
             transform: rotate(45deg) translateX(75%);
             opacity: 97%;
+            z-index: 1000;
         }
         &-full img{
             min-height: 50vh;
