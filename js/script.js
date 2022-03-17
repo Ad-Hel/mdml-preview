@@ -91,17 +91,39 @@ const debounce = (fn) => {
       });
   
     } 
-  };
+};
   
   
-  // Reads out the scroll position and stores it in the data attribute
-  // so we can use it in our stylesheets
-  const storeScroll = () => {
-    document.documentElement.dataset.scroll = window.scrollY;
-  }
-  
-  // Listen for new scroll events, here we debounce our `storeScroll` function
-  document.addEventListener('scroll', debounce(storeScroll), { passive: true });
-  
-  // Update scroll position for first time
-  storeScroll();
+// Reads out the scroll position and stores it in the data attribute
+// so we can use it in our stylesheets
+const storeScroll = () => {
+document.documentElement.dataset.scroll = window.scrollY;
+}
+
+// Listen for new scroll events, here we debounce our `storeScroll` function
+document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+
+// Update scroll position for first time
+storeScroll();
+
+/**
+ * 
+ * Form custom script
+ * 
+ */
+const newReadingButton  =   document.getElementById('newReading');
+const anchorPoint       =   newReadingButton.closest('.row');
+
+
+function appendNewReadingGroup(event){
+    const index              =   event.target.getAttribute('data-index');
+    const newIndex           =   parseInt(index, 10) + 1;
+    const readingGroupHTML   =   newReadingGroup(index);
+    anchorPoint.insertAdjacentHTML('beforebegin', readingGroupHTML);
+    event.target.setAttribute('data-index', newIndex);
+}
+
+newReadingButton.addEventListener('click', appendNewReadingGroup);
+
+
+

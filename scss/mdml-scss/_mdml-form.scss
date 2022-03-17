@@ -1,0 +1,33 @@
+.mdml-form{
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    max-height: 100vh;
+    &-step{
+        scroll-snap-align: start;
+        scroll-snap-stop: always;        
+    }
+}
+
+@keyframes flip-off{
+    0%{
+        transform-origin: left;
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    50%{
+        transform-origin: left;
+        transform: rotateY(135deg);
+        opacity: 1;
+    }
+    75%{
+        transform-origin: left;
+        transform: rotateY(180deg);
+        opacity: 1;
+    }
+    100%{
+        transform-origin: left;
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+}

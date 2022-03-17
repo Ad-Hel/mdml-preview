@@ -10893,14 +10893,14 @@ textarea.form-control-lg {
     overflow-y: visible;
   }
 }
-.page {
+.mdml-page {
   position: relative;
   padding: 10rem 5vw;
   min-height: 75vh;
   margin: 5rem 0;
   overflow: hidden;
 }
-.page::before {
+.mdml-page::before {
   content: "";
   position: absolute;
   top: 2rem;
@@ -10914,7 +10914,7 @@ textarea.form-control-lg {
   background-size: contain;
   opacity: 75%;
 }
-.page::after {
+.mdml-page::after {
   content: counter(page);
   counter-increment: page;
   position: absolute;
@@ -10923,22 +10923,22 @@ textarea.form-control-lg {
   left: 50%;
   bottom: 2rem;
 }
-.page-decoration {
+.mdml-page-decoration {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, -100%);
   width: 50%;
 }
-.page-illustration {
+.mdml-page-illustration {
   width: 50%;
   margin: 0 auto;
   display: block;
 }
-.page-picture {
+.mdml-page-picture {
   position: relative;
 }
-.page-picture::before {
+.mdml-page-picture::before {
   content: "";
   position: absolute;
   top: 0;
@@ -10950,7 +10950,7 @@ textarea.form-control-lg {
   opacity: 97%;
   z-index: 1000;
 }
-.page-picture::after {
+.mdml-page-picture::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -10962,15 +10962,49 @@ textarea.form-control-lg {
   opacity: 97%;
   z-index: 1000;
 }
-.page-picture-full img {
+.mdml-page-picture-full img {
   min-height: 50vh;
   width: auto;
   object-fit: cover;
 }
-.page-video iframe {
+.mdml-page-video iframe {
   width: calc(100% + 10vw);
   margin: 0 -5vw;
   aspect-ratio: 16/9;
+}
+
+.mdml-form {
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  max-height: 100vh;
+}
+.mdml-form-step {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+@keyframes flip-off {
+  0% {
+    transform-origin: left;
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform-origin: left;
+    transform: rotateY(135deg);
+    opacity: 1;
+  }
+  75% {
+    transform-origin: left;
+    transform: rotateY(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: left;
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=bootstrap.css.map */

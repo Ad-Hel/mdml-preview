@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr" data-scroll="0">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script defer src="./js/vivus.js"></script>
+        <script defer src="./js/pathformer.js"></script>
+        <script defer src="./js/vivus-config.js"></script>
+        <script defer src="./js/script.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="./css/bootstrap.css" media="(prefers-color-scheme: light)" />
+        <link rel="stylesheet"  href="./css/bootstrap-dark.css"  media="(prefers-color-scheme: dark)" />
+        <link id="theme" rel="stylesheet"  href=""/>
+        <link href="./css/style.css" rel="stylesheet">
+        <title>Mots dits mots lus c'est quoi ?</title>
+        <meta name="description" content="Mots dits mots lu organise chaque année la journée sidérale de la lecture à haute voix">
+    </head>
+    <body id="body">
+        <nav class="navbar navbar-expand-xl navbar-light bg-white sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img class="img-fluid mdml-logo" src="./assets/logo/logo_mdml_rvb.jpg" alt=""></a>
+                <button id="openMenu" class="navbar-toggler" type="button" data-target="#navbar-content" aria-controls="navbar-content">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas-lg offcanvas-end w-100 border-0" id="menu">
+                    <div class="offcanvas-header">
+                        <button id="closeMenu" type="button" class="btn-close text-reset ms-auto" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-lg-end mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Le programme</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">La journée sidérale</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Les préambules</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mots dits mots lus</a>
+                                <ul class="dropdown-menu dropdown-menu-end border-0" aria-labelledby="#dropdown-about">
+                                    <li><a class="dropdown-item" href="#">Mots dits mots lus, c'est quoi ?</a></li>
+                                    <li><a class="dropdown-item" href="#">Les actions innovantes</a></li>
+                                    <li><a class="dropdown-item" href="#">Les précédentes éditions</a></li>
+                                    <li><a class="dropdown-item" href="#">Contact et nous</a></li>
+                                    <li><a class="dropdown-item" href="#">Communications et multimédias</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item me-lg-0">
+                                        <a class="nav-link" href="https://www.facebook.com/motsditsmotslus/" ><i class="bi bi-facebook" aria-label="facebook"></i></a>
+                                    </li>
+                                    <li class="list-inline-item me-lg-0">
+                                        <a class="nav-link" href="https://www.instagram.com/motsditsmotslus/"><i class="bi bi-instagram  aria-label="instagram""></i></a>
+                                    </li>
+                                    <li class="list-inline-item me-lg-0">
+                                        <a class="nav-link" href="https://twitter.com/motsditsmotslus"><i class="bi bi-twitter" aria-label="twitter"></i></a>
+                                    </li>
+                                    <li class="list-inline-item me-lg-0">
+                                        <a class="nav-link" href="#"><i class="bi bi-cloud-fog2-fill" aria-label="soundcloud"></i></a>
+                                    </li>
+                                    <li class="list-inline-item me-lg-0">
+                                        <a class="nav-link" href="#"><i class="bi bi-youtube" aria-label="youtube"></i></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <!--<div class="create-event-button">
+                    <a class="create-event-button-link" href="#">
+                        <svg fill="currentColor" class="create-event-button-text-box" viewBox="0 0 100 100">
+                        <defs>
+                            <path id="circle"
+                            d="
+                                M 50, 50
+                                m -37, 0
+                                a 37,37 0 1,1 74,0
+                                a 37,37 0 1,1 -74,0"/>
+                        </defs>
+                        <text class="create-event-button-text">
+                            <textPath xlink:href="#circle">
+                            Je lis, je m'inscris
+                            </textPath>
+                        </text>
+                        </svg>
+                        <i class="bi bi-plus"></i>
+                    </a>
+                </div>
+            </div>-->
+        </nav>
+        <nav class="navbar navbar-expand navbar-light bg-white">
+            <div class="container-fluid">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item px-1">
+                        <button id="toggleTheme" type="button" class="btn btn-link"><i class="bi bi-moon"></i></button>
+                    </li>
+                    <li class="nav-item px-1">
+                        <button id="toggleFont" type="button" class="btn btn-link">Dys</button>
+                    </li>
+                    <li class="nav-item px-1">
+                        <form>
+                            <select class="form-select" aria-label="lang-select">
+                                <option selected>Fr</option>
+                                <option>En</option>
+                            </select>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="container-fluid bg-light">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-xl-5 col-xxl-4 my-4">
+                    <form class="mdml-form">
+                        <div id="step-1" class="row justify-content-center">
+                            <div class="col bg-white mdml-page mdml-form-step">
+                                <div class="form-check form-check-inline mb-3">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="mdml-event-type" id="mdml-event-type-jslhv" value="journée-lecture" checked> Journée sidérale de la lecture à haute voix
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline mb-3">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="mdml-event-type" id="mdml-event-type-pream" value="préambules"> Les préambules
+                                    </label>  
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="mdml-event-name" name="mdml-event-name" placeholder="" required="required">
+                                    <label for="mdlm-event-name">Nom de votre de lecture (obligatoire)</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                  <input type="datetime-local" class="form-control" name="mdml-event-date-start" id="mdml-event-date-start" placeholder="" required="required">
+                                  <label for="mdml-event-date-start">Date et heure de début (obligatoire)</label>
+                                </div>   
+                                <div class="form-floating mb-3">
+                                  <input type="datetime-local" class="form-control" name="mdml-event-date-end" id="mdml-event-date-end" placeholder="">
+                                  <label for="mdml-event-date-end">Date et heure de fin (obligatoire)</label>
+                                </div>   
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="mdml-event-location" name="mdml-event-name" placeholder="" required="required">
+                                    <label for="mdlm-event-location">Lieu de votre lecture (obligatoire)</label>
+                                </div>   
+                            </div>
+                        </div>
+                        <div id="step-2" class="row justify-content-center">
+                            <div class="col bg-white mdml-page mdml-form-step">
+                                <div class="row mdml-form-reading-group">
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" name="mdml-event-text-1" id="mdml-event-text-1" placeholder="">
+                                            <label for="mdml-event-text-1">Lecture 1</label>
+                                          </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" name="mdml-event-text-1-author" id="mdml-event-text-1-author" placeholder="">
+                                            <label for="mdml-event-text-1-author">Autrice ou auteur</label>
+                                          </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" name="mdml-event-text-1-reader" id="mdml-event-text-1-reader" placeholder="">
+                                            <label for="mdml-event-text-1-reader">Lectrice ou lecteur</label>
+                                          </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    function newReadingGroup(index){
+                                        return (
+                                            `
+                                            <div class="row mdml-form-reading-group">
+                                                <div class="col-12">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" name="mdml-event-text-${index}" id="mdml-event-text-${index}" placeholder="">
+                                                        <label for="mdml-event-text-${index}">Lecture ${index}</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" name="mdml-event-text-${index}-author" id="mdml-event-text-${index}-author" placeholder="">
+                                                        <label for="mdml-event-text-${index}-author">Autrice ou auteur</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" name="mdml-event-text-${index}-reader" id="mdml-event-text-${index}-reader" placeholder="">
+                                                        <label for="mdml-event-text-${index}-reader">Lectrice ou lecteur</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            `
+                                        )
+                                    }
+                                </script>
+                                <div class="row justify-content-center">
+                                    <div class="col-auto">
+                                        <button id="newReading" type="button" class="btn btn-outline-secondary rounded-pill btn-sm" data-index="2">Ajouter une lecture</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="step-3" class="row justify-content-center">
+                            <div class="col bg-white mdml-page mdml-form-step">
+                                <p class="form-text mb-0">Pourquoi ce choix de lecture(s) ?</p>
+                                <p class="form-text mb-0">Pour qui ? Où ? Pourquoi ce lieu ? </p>
+                                <p class="form-text mb-0">Un petit moment convivial pour clôturer ce moment de partage ?</p>
+                                <p class="form-text mb-0">Et vous pouvez également nous préciser si vous êtes plusieurs lecteurs à lire plusieurs textes… </p>
+                                <p class="form-text mb-0">Présentez-nous en quelques mots votre moment de lecture, votre Mots dits Mots lus !</p>
+                                <div class="form-floating mb-3">
+                                  <textarea class="form-control" name="mdml-event-desc" id="mdml-event-desc" placeholder="" style="height: 35vh" maxlength="650"></textarea>
+                                  <label for="mdml-event-desc">Décrivez votre événement en 600 signes maximum</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col bg-white mdml-page mdml-form-step">
+                                <div class="form-floating mb-3">
+                                  <input type="url" class="form-control" name="mdml-event-url" id="mdml-event-url" placeholder="">
+                                  <label for="mdml-event-url">Votre site internet</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                  <input type="text" class="form-control" name="mdml-event-org" id="mdml-event-org" placeholder="">
+                                  <label for="mdml-event-org">Votre association</label>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="mdml-event-file" class="form-label">Votre illustration</label>
+                                  <input type="file" class="form-control" name="mdml-event-file" id="mdml-event-file" placeholder="" aria-describedby="mdml-event-file-help">
+                                  <small id="mdml-event-file-help" class="form-text text-muted">Taille maximale de 2Mo, vous devez posséder les droits ou l'image doit être libre.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col bg-white mdml-page mdml-form-step">
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="mdml-event-accessibility">
+                                    <label class="form-check-label" for="mdml-event-accessibility">Y a-t-il un accès Personne à Mobilité Réduite ?</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="mdml-event-opening" checked>
+                                    <label class="form-check-label" for="mdml-event-opening">Est-ce ouvert au public ?</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                  <input type="text" class="form-control" name="mdml-event-lang" id="mdml-event-lang" placeholder="">
+                                  <label for="mdml-event-lang">Dans quelle·s langue·s allez-vous lire ?</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="mdml-event-public" name="mdml-event-public" aria-label="Pour qui ? Pour quelle tranche d'âge ?">
+                                        <option value="all">Tous</option>
+                                        <option value="adult">Adultes</option>
+                                        <option value="teen">Ados</option>
+                                        <option value="child">Jeune public</option>
+                                        <option value="baby">Très jeune public</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col bg-white mdml-page mdml-form-step">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="mdml-event-last-name" id="mdml-event-last-name" placeholder="">
+                                    <label for="mdml-event-last-name">Nom</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="mdml-event-first-name" id="mdml-event-first-name" placeholder="">
+                                    <label for="mdml-event-first-name">Prénom</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" name="mdml-event-email" id="mdml-event-email" placeholder="" required="required">
+                                    <label for="mdml-event-email">Courriel (obligatoire)</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control" name="mdml-event-tel" id="mdml-event-tel" placeholder="">
+                                    <label for="mdml-event-tel">Téléphone</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="mdml-event-street" id="mdml-event-street" placeholder="">
+                                    <label for="mdml-event-street">Rue</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="mdml-event-street-alt" id="mdml-event-street-alt" placeholder="">
+                                    <label for="mdml-event-street-alt">Supplément</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="mdml-event-zip-code" id="mdml-event-zip-code" placeholder="">
+                                    <label for="mdml-event-zip-code">Code Postal</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="mdml-event-city" id="mdml-event-city" placeholder="">
+                                    <label for="mdml-event-city">Ville</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="mdml-event-country" id="mdml-event-country" placeholder="">
+                                    <label for="mdml-event-country">Pays</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg rounded-pill mx-auto d-block mt-4">Valider</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="container-fluid bg-light">
+            <div class="row justify-content-center bg-white my-4 py-4">
+                <div class="col-12 col-md-6 col-xl-5 col-xxl-4  my-4 py-4">
+                    <h3>On garde contact ?</h3>
+                    <form>
+                        <label for="newsletter-subscription" class="form-label">Email</label>
+                        <input type="email" id="newsletter-subscription" class="form-control" aria-describedby="newsletter-legal-notice">
+                        <div id="newsletter-legal-notice" class="form-text mb-4">Vous acceptez de recevoir des courriels de la part de Mots dits Mots lus à fin de promotion des initiatives de l'association. Vos données personnelles seront traités informatiquement par SendEthic. Nous vous invitons à consulter nos <a href="#">mentions légales</a> pour connaître l'ensemble de vos droits relatifs à vos données personnelles.</div>
+                        <button type="submit" class="btn btn-primary">Je m'abonne</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row justify-content-center py-4 mt-4">
+                <div class="col-12 col-lg-3">
+                    <ul class="list-unstyled fs-5 mb-0">
+                        <li><a class="text-decoration-none text-dark" href="#">Le programme</a></li>
+                        <li><a class="text-decoration-none text-dark" href="#">La journée sidérale de la lecture à voix haute</a></li>
+                        <li><a class="text-decoration-none text-dark" href="#">Les préambules</a></li>
+                        <li><a class="text-decoration-none text-dark" href="#">Inscrire un événement</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3 pb-4 mb-4">
+                        <ul class="list-unstyled fs-5">
+                            <li><a class="text-decoration-none text-dark" href="#">Mots dits mots lus, c'est quoi ?</a></li>
+                            <li><a class="text-decoration-none text-dark" href="#">Les actions innovantes</a></li>
+                            <li><a class="text-decoration-none text-dark" href="#">Les précédentes éditions</a></li>
+                            <li><a class="text-decoration-none text-dark" href="#">Contact et nous</a></li>
+                            <li><a class="text-decoration-none text-dark" href="#">Communications et multimédias</a></li>
+                        </ul>
+                </div>
+                <div class="col-12 col-lg-3 mb-4 d-flex flex-column justify-content-between pb-4 mb-4">
+                    <!--<h3>On reste en contact</h3>-->
+                    <img src="./assets/logo/logo_mdml_rvb.jpg" width="90" class="d-block ms-md-auto mx-md-0 mx-auto mb-4">
+                    <p class="text-center text-md-end">Contact : <a href="mailto:contact@motsditsmotslus.com">contact@motsditsmotslus.com</a></p>
+                </div>
+            </div>
+            <div class="row justify-content-center py-4">
+                <div class="col-auto fs-3">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/motsditsmotslus/"><i class="bi bi-facebook" aria-label="facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/motsditsmotslus/"><i class="bi bi-instagram" aria-label="instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/motsditsmotslus"><i class="bi bi-twitter" aria-label="twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#"><i class="bi bi-cloud-fog2-fill" aria-label="soundcloud"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#"><i class="bi bi-youtube" aria-label="youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-center py-4">
+                <div class="col-auto">
+                    <a href="#">mentions légales</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
