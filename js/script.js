@@ -111,19 +111,30 @@ storeScroll();
  * Form custom script
  * 
  */
-const newReadingButton  =   document.getElementById('newReading');
-const anchorPoint       =   newReadingButton.closest('.row');
+const newReadingButton      =   document.getElementById('newReading');
+const anchorPoint           =   newReadingButton.closest('.row');
+const container             =   document.getElementById('mdml-form-step-readings')
 
 
 function appendNewReadingGroup(event){
-    const index              =   event.target.getAttribute('data-index');
-    const newIndex           =   parseInt(index, 10) + 1;
-    const readingGroupHTML   =   newReadingGroup(index);
+    const index             =   event.target.getAttribute('data-index');
+    const newIndex          =   parseInt(index, 10) + 1;
+    const readingGroupHTML  =   newReadingGroup(index);
     anchorPoint.insertAdjacentHTML('beforebegin', readingGroupHTML);
     event.target.setAttribute('data-index', newIndex);
 }
 
+function deleteReadingGroup(event){
+    const button            =   event.target;
+    if (button.classList.contains('removeReading')){
+        const index         =   button.getAttribute('data-index');
+        const readingGroup  =   document.getElementById(`mdml-form-reading-group-${index}`);
+        readingGroup.remove();
+    }
+}
+
 newReadingButton.addEventListener('click', appendNewReadingGroup);
+container.addEventListener('click', deleteReadingGroup);
 
 
 
