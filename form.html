@@ -16,7 +16,7 @@
         <title>Mots dits mots lus c'est quoi ?</title>
         <meta name="description" content="Mots dits mots lu organise chaque année la journée sidérale de la lecture à haute voix">
     </head>
-    <body id="body">
+    <body id="body" class="postition-relative" data-bs-spy="scroll" data-bs-target="#mdml-form-nav">
         <nav class="navbar navbar-expand-xl navbar-light bg-white sticky-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img class="img-fluid mdml-logo" src="./assets/logo/logo_mdml_rvb.jpg" alt=""></a>
@@ -148,7 +148,7 @@
                             </div>
                         </div>
                         <div id="step-2" class="row justify-content-center">
-                            <div class="col bg-white mdml-page mdml-form-step">
+                            <div id="mdml-form-step-readings" class="col bg-white mdml-page mdml-form-step">
                                 <div class="row mdml-form-reading-group">
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
@@ -173,7 +173,7 @@
                                     function newReadingGroup(index){
                                         return (
                                             `
-                                            <div class="row mdml-form-reading-group">
+                                            <div id="mdml-form-reading-group-${index}" class="row mdml-form-reading-group">
                                                 <div class="col-12">
                                                     <div class="form-floating mb-3">
                                                         <input type="text" class="form-control" name="mdml-event-text-${index}" id="mdml-event-text-${index}" placeholder="">
@@ -192,6 +192,15 @@
                                                         <label for="mdml-event-text-${index}-reader">Lectrice ou lecteur</label>
                                                     </div>
                                                 </div>
+                                                <div class="col-12">
+                                                    <div class="row justify-content-end">
+                                                        <div class="col-auto">
+                                                            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill removeReading" data-index="${index}">retirer</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                
                                             </div>
                                             `
                                         )
@@ -217,7 +226,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row justify-content-center">
+                        <div id="step-4" class="row justify-content-center">
                             <div class="col bg-white mdml-page mdml-form-step">
                                 <div class="form-floating mb-3">
                                   <input type="url" class="form-control" name="mdml-event-url" id="mdml-event-url" placeholder="">
@@ -234,7 +243,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row justify-content-center">
+                        <div id="step-5" class="row justify-content-center">
                             <div class="col bg-white mdml-page mdml-form-step">
                                 <div class="form-check form-switch mb-3">
                                     <input class="form-check-input" type="checkbox" id="mdml-event-accessibility">
@@ -256,10 +265,11 @@
                                         <option value="child">Jeune public</option>
                                         <option value="baby">Très jeune public</option>
                                     </select>
+                                    <label for="mdml-event-public">Pour qui ? Pour quelle tranche d'âge ?</label>
                                 </div>
                             </div>
                         </div>
-                        <div class="row justify-content-center">
+                        <div id="step-6" class="row justify-content-center">
                             <div class="col bg-white mdml-page mdml-form-step">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" name="mdml-event-last-name" id="mdml-event-last-name" placeholder="">
@@ -301,6 +311,16 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="col-12 col-md-2 col-xl-2 col-xxl-1 my-4">
+                    <div id="mdml-form-nav" class="list-group mdml-form-nav">
+                        <a href="#step-1" class="list-group-item list-group-item-action active">Votre événement</a>
+                        <a href="#step-2" class="list-group-item list-group-item-action">Les lectures</a>
+                        <a href="#step-3" class="list-group-item list-group-item-action">Un petit mot</a>
+                        <a href="#step-4" class="list-group-item list-group-item-action">Votre asso</a>
+                        <a href="#step-5" class="list-group-item list-group-item-action">Pour qui ?</a>
+                        <a href="#step-6" class="list-group-item list-group-item-action">Qui êtes-vous ?</a>
+                    </div>
                 </div>
             </div>
         </main>
