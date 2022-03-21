@@ -1,9 +1,10 @@
 .mdml-page{
     position: relative;
-    padding: 10rem 5vw;
+    padding: 10rem min(5vw, 50px);
     min-height: 75vh;
     margin: 5rem 0;
     overflow: hidden;
+    max-width: 600px;
     &::before{
         content: "";
         position: absolute;
@@ -39,8 +40,9 @@
         margin: 0 auto;
         display: block;
     }
-    &-picture{
+    & .wp-block-image, .wp-block-eedee-block-gutenslider{
         position: relative;
+        margin: 3rem 0;
         &::before{
             content: "";
             position: absolute;
@@ -71,9 +73,10 @@
             object-fit: cover;
         }
     }
-    &-video iframe{
-        width: calc(100% + 10vw);
-        margin: 0 -5vw;
+    & .wp-block-embed.is-type-video iframe{
+        width: calc( 100% + min(10vw, 100px) );
+        margin: 0 max(-5vw, -50px);
         aspect-ratio: 16 / 9;
+        max-width: none;
     }
 }
