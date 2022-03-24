@@ -1,9 +1,9 @@
 .mdml-form{
     &-nav{
-        @media (min-width: map.get($grid-breakpoints, "lg")){
+        @media (min-width: map.get($grid-breakpoints, "md")){
             position: fixed;
-            top: 15%;
-            right: 25%;
+            top: 15rem;
+            left: 75%;
         }
     }
 }
