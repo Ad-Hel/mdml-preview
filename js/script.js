@@ -111,6 +111,12 @@ storeScroll();
  * Form custom script
  * 
  */
+
+/**
+ * 
+ * Dynamic reading group 
+ * 
+ */
 const newReadingButton      =   document.getElementById('newReading');
 const anchorPoint           =   newReadingButton.closest('.row');
 const container             =   document.getElementById('mdml-form-step-readings')
@@ -136,5 +142,44 @@ function deleteReadingGroup(event){
 newReadingButton.addEventListener('click', appendNewReadingGroup);
 container.addEventListener('click', deleteReadingGroup);
 
+/**
+ * 
+ * Dynamic location 
+ * 
+ */
+
+const userInput = document.getElementById('mdml-event-location');
+const preview = document.getElementById('mdml-event-location-api-result');
+const latitude = document.getElementById('mdml-event-location-lat');
+const longitude = document.getElementById('mdml-event-location-long');
+const apiKeyInput = document.getElementById('api-key');
+let apiKey = '';
 
 
+
+// TO DO : put this function server side
+async function getPosition(query){
+    try{
+        const url = 'http://api.positionstack.com/v1/forward?access_key='+ apiKey +'&limit=1&query=' + query
+        const req = await fetch(url);
+        const res = await req.json();
+        console.log(res);
+        return res;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+async function handlePosition(event){
+    const position = event.target.value;
+    const geolocation = await getPosition(position);
+    latitude.value = (geolocation.data[0].latitude);
+    longitude.value = (geolocation.data[0].longitude);
+    preview.innerText = geolocation.data[0].label;
+}
+
+userInput.addEventListener('blur', handlePosition);
+apiKeyInput.addEventListener('blur', function(event){
+    apiKey = event.target.value;
+})

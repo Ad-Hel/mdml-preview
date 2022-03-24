@@ -142,9 +142,13 @@
                                   <label for="mdml-event-date-end">Date et heure de fin (obligatoire)</label>
                                 </div>   
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="mdml-event-location" name="mdml-event-name" placeholder="" required="required">
+                                    <input id="mdml-event-location" type="text" class="form-control" id="mdml-event-location" name="mdml-event-name" placeholder="" required="required">
                                     <label for="mdlm-event-location">Lieu de votre lecture (obligatoire)</label>
+                                    <small id="mdml-event-location-api-result" class="form-text"></small>
                                 </div>   
+                                <input id="mdml-event-location-lat" type="text" hidden>
+                                <input id="mdml-event-location-long" type="text" hidden>
+                                <input id="api-key" type="text">
                             </div>
                         </div>
                         <div id="step-2" class="row justify-content-center">
