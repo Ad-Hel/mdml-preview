@@ -153,16 +153,11 @@ const preview = document.getElementById('mdml-event-location-api-result');
 const latitude = document.getElementById('mdml-event-location-lat');
 const longitude = document.getElementById('mdml-event-location-long');
 
-
-
-// TO DO : put this function server side
 async function getPosition(query){
     try{
-        const url = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=' + query
-
+        const url = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&addressdetails=1&q=' + query
         const req = await fetch(url);
         const res = await req.json();
-        console.log(res);
         return res;
     }
     catch(error){
@@ -173,9 +168,17 @@ async function getPosition(query){
 async function handlePosition(event){
     const position = event.target.value;
     const geolocation = await getPosition(position);
-    latitude.value = (geolocation[0].lat);
-    longitude.value = (geolocation[0].lon);
-    preview.innerText = geolocation[0].display_name;
+    if (geolocation[0]){
+        latitude.value = (geolocation[0].lat);
+        longitude.value = (geolocation[0].lon);
+        const {leisure,house_number, road, town, postcode, country} = geolocation[0].address;
+        locationName = [leisure, house_number, road, postcode, town, country].join(' ');
+    } else {
+        latitude.value = null;
+        longitude.value = null;
+        locationName = 'Désolé, la géolocalisation à échouer. Vérifiez l\'adresse saisie, une correction manuelle sera apportée avant publication.';
+    }
+    preview.innerText = locationName;
 }
 
 userInput.addEventListener('blur', handlePosition);
