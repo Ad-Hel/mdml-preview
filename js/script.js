@@ -152,15 +152,14 @@ const userInput = document.getElementById('mdml-event-location');
 const preview = document.getElementById('mdml-event-location-api-result');
 const latitude = document.getElementById('mdml-event-location-lat');
 const longitude = document.getElementById('mdml-event-location-long');
-const apiKeyInput = document.getElementById('api-key');
-let apiKey = '';
 
 
 
 // TO DO : put this function server side
 async function getPosition(query){
     try{
-        const url = 'http://api.positionstack.com/v1/forward?access_key='+ apiKey +'&limit=1&query=' + query
+        const url = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=' + query
+
         const req = await fetch(url);
         const res = await req.json();
         console.log(res);
@@ -174,12 +173,9 @@ async function getPosition(query){
 async function handlePosition(event){
     const position = event.target.value;
     const geolocation = await getPosition(position);
-    latitude.value = (geolocation.data[0].latitude);
-    longitude.value = (geolocation.data[0].longitude);
-    preview.innerText = geolocation.data[0].label;
+    latitude.value = (geolocation[0].lat);
+    longitude.value = (geolocation[0].lon);
+    preview.innerText = geolocation[0].display_name;
 }
 
 userInput.addEventListener('blur', handlePosition);
-apiKeyInput.addEventListener('blur', function(event){
-    apiKey = event.target.value;
-})
