@@ -182,3 +182,27 @@ async function handlePosition(event){
 }
 
 userInput.addEventListener('blur', handlePosition);
+
+/**
+ * 
+ * Form success
+ * 
+ */
+const form = document.getElementById('mdml-form-row');
+const success = document.getElementById('mdml-form-success');
+const formSubmit = document.getElementById('mdml-form-submit');
+const formReload = document.getElementById('mdml-form-reload');
+
+function onSuccess(){
+   form.classList.add('d-none');
+   success.classList.remove('d-none');
+   windows.scroll(0, 0)
+}
+
+function onReload(){
+    form.classList.remove('d-none');
+    success.classList.add('d-none');
+}
+
+formSubmit.addEventListener('click', (e) => {e.preventDefault(); onSuccess()});
+formReload.addEventListener('click', onReload);

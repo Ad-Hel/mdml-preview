@@ -114,9 +114,18 @@
             </div>
         </nav>
         <main class="container-fluid bg-light">
-            <div class="row justify-content-center">
+            <div id="mdml-form-success" class="row justify-content-center d-none">
+                <div class="col-12 col-md-6 col-xl-5 col-xxl-4 my-4 mdml-page bg-white">
+                    <h2>Votre événement est enregistré !</h2>
+                    <p>Merci pour votre contribution !</p>
+                    <p>L'équipe de Mots dits Mots lus va désormais étudier votre événement afin de le valider. Vous recevrez un email quand il sera en ligne afin que vous puissiez communiquer dessus.</p>
+                    <p>N'hésitez pas à aller voir <a href="/les-actions-innovantes">nos autres initiatives</a> et à les faire connaître autour de vous.</p>
+                    <button id="mdml-form-reload" type="button" class="btn btn-primary btn-lg rounded-pill d-block w-50 mx-auto my-4">Je soumet un autre événement</button>
+                </div>
+            </div>
+            <div id="mdml-form-row" class="row justify-content-center">
                 <div class="col-12 col-md-6 col-xl-5 col-xxl-4 my-4">
-                    <form class="mdml-form">
+                    <form id="mdml-form" class="mdml-form">
                         <div id="step-1" class="row justify-content-center">
                             <div class="col bg-white mdml-page mdml-form-step">
                                 <div class="form-check form-check-inline mb-3">
@@ -310,7 +319,7 @@
                                     <input type="text" class="form-control" name="mdml-event-country" id="mdml-event-country" placeholder="">
                                     <label for="mdml-event-country">Pays</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-lg rounded-pill mx-auto d-block mt-4">Valider</button>
+                                <button id="mdml-form-submit" type="submit" class="btn btn-primary btn-lg rounded-pill mx-auto d-block mt-4">Valider</button>
                             </div>
                         </div>
                     </form>
