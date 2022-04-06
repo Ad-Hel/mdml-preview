@@ -1,0 +1,12 @@
+.single-event-hero{
+    background-image: url('/assets/logo/logo_mdml_white_as_background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: min(24vw, 12rem) min(16vw, 5rem) min(24vw, 8rem) min(3rem, 12vw);
+    font-size: min(4vw, 1rem);   
+    &-icon{
+        width: min(40px, 100%);
+        max-height: min(100%, 40px);
+    }
+}
