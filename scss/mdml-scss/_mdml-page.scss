@@ -36,9 +36,32 @@
         width: 50%;
     }
     &-illustration{
-        width: 50%;
-        margin: 0 auto;
+        margin: 3rem auto;
         display: block;
+        &-h{
+            width: min(50vw, 300px);
+            max-height: min(25vh, 300px);
+        }
+        &-v{
+            height: min(25vh, 300px);
+            max-width: min(50vw, 300px);
+        }
+        &-fh{
+            width: min(600px, 80vw);
+        }
+    }
+    & .mdml-page-illustration{
+        &-h{
+            width: min(25vw, 150px);
+            max-height: min(25vh, 150px);
+        }
+        &-v{
+            height: min(12vh, 150px);
+            max-width: min(25vw, 150px);
+        }
+        &-fh{
+            width: min(300px, 50vw);
+        } 
     }
     & .wp-block-image, .wp-block-eedee-block-gutenslider{
         position: relative;
