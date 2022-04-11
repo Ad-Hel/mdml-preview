@@ -1,0 +1,20 @@
+.fill{
+    &-primary{
+        fill: $primary;
+    }
+    &-secondary{
+        fill: $secondary;
+    }
+    &-white{
+        fill: $white;
+    }
+    &-yellow{
+        fill: $yellow;
+    }
+    &-pink{
+        fill: $pink;
+    }
+    &-grey{
+        fill: $gray-600;
+    }
+}
