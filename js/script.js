@@ -1,40 +1,48 @@
 /**
  * Dark/light mode toggle
  */
-const themeDark = document.getElementById('theme-dark');
-const toggleTheme = document.getElementById('toggleTheme');
-const darkThemeIcon = document.getElementById('dark-theme-icon');
-const lightThemeIcon = document.getElementById('light-theme-icon');
-const userPreference = localStorage.getItem('mdml-theme');
+ const themeDark = document.getElementById('theme-dark');
+ const toggleTheme = document.getElementById('toggleTheme');
+ const darkThemeIcon = document.getElementById('dark-theme-icon');
+ const lightThemeIcon = document.getElementById('light-theme-icon');
+ let userPreference = localStorage.getItem('mdml-theme');
 
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || userPreference === 'dark'){
+ 
+if (userPreference === 'dark'){
+	switchMode('dark');
     darkThemeIcon.classList.add('d-none');
-    lightThemeIcon.classList.remove('d-none');
+	lightThemeIcon.classList.remove('d-none');
+}
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+	darkThemeIcon.classList.add('d-none');
+	lightThemeIcon.classList.remove('d-none');
+	localStorage.setItem('mdml-theme', 'dark')
 }
 
 toggleTheme.addEventListener('click', (e)=> {
-    if (e.target.id === 'dark-theme-icon'){
-        darkThemeIcon.classList.add('d-none');
-        lightThemeIcon.classList.remove('d-none');
-        switchMode('dark');
-        return;
-    }
-    if (e.target.id === 'light-theme-icon'){
-        lightThemeIcon.classList.add('d-none');
-        darkThemeIcon.classList.remove('d-none');
-        switchMode('light');
-        return;
-    }
-    
+    userPreference = localStorage.getItem('mdml-theme');
+	if (userPreference === 'dark'){
+		lightThemeIcon.classList.add('d-none');
+		darkThemeIcon.classList.remove('d-none');
+		switchMode('light');
+		return;
+	} else {
+		darkThemeIcon.classList.add('d-none');
+		lightThemeIcon.classList.remove('d-none');
+		switchMode('dark');
+		return;
+	}
+	
 })
 
 function switchMode(mode){
-    localStorage.setItem('mdml-theme', mode)
-    const colors = {
-        light: 'none',
-        dark: 'all'
-    }
-    themeDark.setAttribute('media', colors[mode])
+localStorage.setItem('mdml-theme', mode)
+const colors = {
+	light: 'none',
+	dark: 'all'
+}
+themeDark.setAttribute('media', colors[mode]);
 }
 
 /**
@@ -43,6 +51,11 @@ function switchMode(mode){
 
 const body = document.getElementById('body');
 const toggleFont = document.getElementById('toggleFont');
+const userFont = localStorage.getItem('mdml-font');
+
+if (userFont === 'dys'){
+	switchPolice()
+}
 
 toggleFont.addEventListener('click', (e)=> {
     switchPolice();
@@ -50,6 +63,7 @@ toggleFont.addEventListener('click', (e)=> {
 
 function switchPolice(){
     body.classList.toggle('dys');
+	localStorage.setItem('mdml-font', 'dys');
 }
 
 /**
