@@ -56,6 +56,16 @@
     &-icon{
         height: 1.2rem;
     }
+    &-logo{
+        width: min(100px, 20vw);
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        html:not([data-scroll='0']) & {
+            width: 50px;
+            position: inherit;
+        }   
+    }
 }
 
 @keyframes rotate {
