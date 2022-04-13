@@ -60,6 +60,14 @@
             width: min(500px, 75vw);
         } 
     }
+    & .wp-block-gallery .wp-block-image{
+        &::before{
+            content: none;
+        }
+        &::after{
+            content: none;
+        }
+    }
     & .wp-block-image, .wp-block-eedee-block-gutenslider{
         position: relative;
         margin: 3rem 0;
