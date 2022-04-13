@@ -6,9 +6,9 @@
         display: flex;
         flex-direction: column;
         max-width: 100%;
-        color: $dark;
+        color: var(--bs-dark);
         visibility: hidden;
-        background-color: $light;
+        background-color: var(--bs-light);
         background-clip: padding-box;
         outline: 0;
         @include box-shadow($offcanvas-box-shadow);
@@ -28,6 +28,13 @@
         &.show {
             transform: none;
             visibility: visible;
+        }
+        & .nav-link{
+            font-size: $h3-font-size
+        }
+        & .mdml-menu-icon{
+            height: $h1-font-size;
+            margin-right: 0.5rem;
         }
       }
 }

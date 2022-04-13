@@ -1,0 +1,8 @@
+/**
+ * This file regroup overload properties to avoid no wanted behavior of bootstrap classes.
+ *
+ */
+//  Navbar is overload to get the right colors, but the position must not be overwritten. 
+.navbar.sticky-top{
+    position: sticky;
+} 

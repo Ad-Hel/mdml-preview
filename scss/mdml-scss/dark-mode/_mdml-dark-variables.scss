@@ -50,13 +50,18 @@ $light:         $mdml-blue-darker;
 $dark:          $mdml-blue-light;
 
 // navbar-mdml-variables
-$navbar-light-color:               $mdml-blue-300;
-$navbar-light-hover-color:         $mdml-blue-400;
-$navbar-light-active-color:         rgba($mdml-blue, .1) !default;
-$navbar-light-disabled-color:       rgba($mdml-blue, .7) !default;
-$navbar-light-toggler-border-color: rgba($mdml-blue, .9) !default;
+$navbar-light-color:                rgba($mdml-blue-200, .55);
+$navbar-light-hover-color:          rgba($mdml-blue-200, .7);
+$navbar-light-active-color:         rgba($mdml-blue-200, .9);
+$navbar-light-disabled-color:       rgba($mdml-blue-200, .3);
+$navbar-light-toggler-border-color: rgba($mdml-blue-200, .1);
+// $navbar-light-color:               $mdml-blue-300;
+// $navbar-light-hover-color:         $mdml-blue-400;
+// $navbar-light-active-color:         rgba($mdml-blue, .1) !default;
+// $navbar-light-disabled-color:       rgba($mdml-blue, .7) !default;
+// $navbar-light-toggler-border-color: rgba($mdml-blue, .9) !default;
 
 // dropdown-mdml-variables
-$dropdown-link-color:               $mdml-blue !default;
-$dropdown-link-hover-color:         shade-color($mdml-blue, 10%) !default;
-$dropdown-link-hover-bg:            $mdml-blue-dark !default;
+$dropdown-link-color:               rgba($mdml-blue-200, .55);
+$dropdown-link-hover-color:         rgba($mdml-blue-200, .7);
+$dropdown-link-hover-bg:            rgba($mdml-blue-200, .1);
