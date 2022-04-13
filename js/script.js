@@ -1,13 +1,13 @@
 /**
  * Dark/light mode toggle
  */
-const themeDark = document.getElementById('theme-dark')
+const themeDark = document.getElementById('theme-dark');
 const toggleTheme = document.getElementById('toggleTheme');
-const darkThemeIcon = document.getElementById('dark-theme-icon')
-const lightThemeIcon = document.getElementById('light-theme-icon')
+const darkThemeIcon = document.getElementById('dark-theme-icon');
+const lightThemeIcon = document.getElementById('light-theme-icon');
+const userPreference = localStorage.getItem('mdml-theme');
 
-
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || userPreference === 'dark'){
     darkThemeIcon.classList.add('d-none');
     lightThemeIcon.classList.remove('d-none');
 }
@@ -29,6 +29,7 @@ toggleTheme.addEventListener('click', (e)=> {
 })
 
 function switchMode(mode){
+    localStorage.setItem('mdml-theme', mode)
     const colors = {
         light: 'none',
         dark: 'all'
